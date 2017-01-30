@@ -271,7 +271,8 @@ int main(int argc, char* argv[]){
             int *rp = parse_int_array( args->s[idx+1] );
             if(rp[0]!=4) // length
                 usage();
-            rct = &Rect(rp[1], rp[2], rp[3], rp[4]);
+            Rect static_ROI(rp[1], rp[2], rp[3], rp[4]);
+            rct = &static_ROI;
             list_remove(args,idx);
             list_remove(args,idx);
         }else
